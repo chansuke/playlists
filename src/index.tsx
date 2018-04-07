@@ -1,21 +1,21 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
-import { createStore, combineReducers, applyMiddleware } from "redux";
-import logger from "redux-logger";
-import { Provider } from "react-redux";
+import * as React from 'react';
+import { render } from 'react-dom';
+import logger from 'redux-logger';
+import { Provider } from 'react-redux';
+import { ConnectedRouter, routerMiddleware } from 'react-router-redux';
+import createBrowserHistory from 'history/createBrowserHistory';
 
-import App from "./App";
-import * as reducers from "./reducers";
+import App from './App';
+import configuerStore from './store';
 
-const store = createStore(
-  combineReducers(reducers),
-  // Add redux-logger for logging.
-  applyMiddleware(logger)
-);
+const history = createBrowserHistory();
+const store = configuerStore([logger, routerMiddleware(history)]);
 
-ReactDOM.render(
+render(
   <Provider store={store}>
-    <App />
+    <ConnectedRouter history={history}>
+      <App />
+    </ConnectedRouter>
   </Provider>,
-  document.getElementById("root")
+  document.getElementById('root')
 );
