@@ -1,0 +1,53 @@
+{
+  "name": "tsproj-20180511",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "watch": "webpack-serve",
+    "build:dev": "NODE_ENV=development webpack",
+    "build:prod": "NODE_ENV=production webpack",
+    "deploy": "yarn build:prod && netlify deploy -p public",
+    "lint": "tslint src/**.ts src/**.tsx",
+    "test": "jest",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^3.4.3",
+    "@storybook/addon-links": "^3.4.3",
+    "@storybook/addon-storyshots": "^3.4.3",
+    "@storybook/addons": "^3.4.3",
+    "@storybook/react": "^3.4.3",
+    "@types/jest": "^22.2.3",
+    "@types/node": "^10.0.6",
+    "@types/power-assert": "^1.5.0",
+    "@types/react": "^16.3.14",
+    "@types/react-dom": "^16.0.5",
+    "@types/storybook__addon-actions": "^3.0.3",
+    "@types/storybook__addon-links": "^3.3.0",
+    "@types/storybook__react": "^3.0.7",
+    "awesome-typescript-loader": "4",
+    "babel-core": "6",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-runtime": "^6.26.0",
+    "html-webpack-plugin": "^3.2.0",
+    "jest": "^22.4.3",
+    "netlify-cli": "^1.2.2",
+    "power-assert": "^1.5.0",
+    "react-test-renderer": "^16.3.2",
+    "ts-jest": "^22.4.5",
+    "tslint": "^5.10.0",
+    "tslint-config-prettier": "^1.12.0",
+    "typescript": "^2.8.3",
+    "webpack": "^4.8.1",
+    "webpack-cli": "^2.1.3",
+    "webpack-serve": "^0.3.2"
+  },
+  "dependencies": {
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "styled-components": "^3.2.6"
+  }
+}
