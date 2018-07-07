@@ -1,12 +1,17 @@
 import * as React from "react"
 import styled from "styled-components"
 
+import Footer from "./Footer"
+import Header from "./Header"
+
 type Props = {}
 
 export default (props: Props) => {
   return (
     <Container>
-      <h1>Hello</h1>
+      <Header title={"this is header"} />
+      <h1>Show timeline in here</h1>
+      <Footer title={"this is footer"} />
     </Container>
   )
 }
